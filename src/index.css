@@ -1,0 +1,207 @@
+@import 'tailwindcss';
+
+/* DM-Aptos bare family (used when font-weight is set separately) */
+@font-face {
+  font-family: 'DM-Aptos';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/DM-Aptos-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'DM-Aptos';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/DM-Aptos-SemiBold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'DM-Aptos';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/DM-Aptos-Bold.woff2') format('woff2');
+}
+
+/* DM-Aptos — real font files resolved from Figma */
+@font-face {
+  font-family: 'DM-Aptos:Regular';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/DM-Aptos-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'DM-Aptos:SemiBold';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/DM-Aptos-SemiBold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'DM-Aptos:Bold';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/DM-Aptos-Bold.woff2') format('woff2');
+}
+
+/* Display and Semi_Bold variants alias to the same files */
+@font-face {
+  font-family: 'DM-Aptos:Display';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/DM-Aptos-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'DM-Aptos:Semi_Bold';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/DM-Aptos-SemiBold.woff2') format('woff2');
+}
+
+/* Change 1: Frame26 real-estate section — white background, no blue gradient */
+[class*="1486"][class*="1659"] {
+  background-color: rgb(255, 255, 255);
+}
+[style*="163.777"] {
+  display: none !important;
+}
+
+/* Changes 2–8: Remove duplicated stacked Facebook icons (left-0 top-0 overflow-clip variants) */
+/* IcBaselineFacebook2 and IcBaselineFacebook1 — left-0 top-0 stacked copies */
+[data-name="ic:baseline-facebook"][class*="overflow-clip"]:not([class*="186px"]) {
+  display: none !important;
+}
+
+/* Paragraph at 1603px is replaced by ScrollRevealText — hide original in both slices */
+[class*="top-\[1603px\]"][class*="text-\[48px\]"] {
+  display: none !important;
+}
+
+/* Footer reveal: desktop footer stays behind the white page and is exposed at the end. */
+.site-shell {
+  position: relative;
+  background: transparent;
+}
+
+.site-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  box-shadow: 0 18px 36px rgba(0, 29, 91, 0.08);
+}
+
+.activity-stack {
+  position: relative;
+  isolation: isolate;
+}
+
+.scroll-reveal-section {
+  margin-bottom: 280px;
+}
+
+/* Shared, one-time viewport reveal for text and visual boxes. */
+.reveal-enabled .reveal-item {
+  opacity: 0;
+  transition-duration: 760ms;
+  transition-delay: var(--reveal-delay, 0ms);
+  transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  transition-property: opacity, transform, filter;
+  will-change: opacity, transform, filter;
+}
+
+.reveal-enabled .reveal-text {
+  transform: translateY(18px);
+  filter: blur(2px);
+}
+
+.reveal-enabled .reveal-box {
+  transform: translateY(24px) scale(0.985);
+  filter: blur(1.5px);
+}
+
+.reveal-enabled .reveal-item.is-revealed {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  filter: blur(0);
+  will-change: auto;
+}
+
+.activity-panel {
+  position: sticky;
+  top: 0;
+  overflow: hidden;
+  flex-shrink: 0;
+  will-change: transform;
+  transform: translateZ(0);
+  filter: drop-shadow(0 -12px 24px rgba(0, 29, 91, 0.12));
+}
+
+.footer-fixed {
+  position: fixed;
+  z-index: 1;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.footer-flow {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .footer-fixed,
+  .footer-reveal-spacer {
+    display: none;
+  }
+
+  .footer-flow {
+    display: block;
+  }
+
+  .site-content {
+    box-shadow: none;
+  }
+
+  .activity-panel {
+    position: relative;
+    top: auto;
+    filter: none;
+  }
+
+  .scroll-reveal-section {
+    margin-bottom: 96px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-enabled .reveal-item {
+    opacity: 1;
+    transform: none;
+    filter: none;
+    transition: none;
+  }
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  scrollbar-width: none;
+}
+*::-webkit-scrollbar {
+  display: none;
+}

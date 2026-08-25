@@ -79,7 +79,9 @@ export default function App() {
 
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const selector = 'p, button, div[class*="rounded-"]';
-    const items = Array.from(root.querySelectorAll<HTMLElement>(selector));
+    const items = Array.from(root.querySelectorAll<HTMLElement>(selector)).filter(
+      (item) => item.dataset.reveal !== "static-background",
+    );
     const footerItems = items.filter((item) => item.closest(".footer-fixed"));
     const pageItems = items.filter((item) => !item.closest(".footer-fixed"));
 

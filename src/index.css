@@ -137,6 +137,14 @@
   will-change: auto;
 }
 
+/* Activity-section backgrounds stay stable while their inner content reveals. */
+[data-reveal="static-background"] {
+  opacity: 1 !important;
+  transform: none !important;
+  filter: none !important;
+  transition: none !important;
+}
+
 .activity-panel {
   position: sticky;
   top: 0;

@@ -333,7 +333,7 @@ function Frame41() {
 
 function Frame25() {
   return (
-    <div className="absolute h-[1080px] left-0 overflow-clip rounded-tl-[20px] rounded-tr-[20px] top-[1945px] w-[1660px]">
+    <div className="absolute h-[1080px] left-0 overflow-clip rounded-tl-[20px] rounded-tr-[20px] top-[1945px] w-[1660px]" data-reveal="static-background">
       <div className="-translate-x-1/2 absolute bg-gradient-to-b from-[#0043a3] h-[1080px] left-1/2 to-[#0cbae6] top-0 w-[1660px]" />
       <div className="-translate-x-1/2 absolute bottom-0 h-[1079.853px] left-1/2 mix-blend-overlay opacity-20 w-[1727.359px]" data-name="BG">
         <img alt="" className="absolute inset-0 max-w-none object-bottom pointer-events-none size-full" src={imgBg} />
@@ -1188,7 +1188,7 @@ function ButtonV2() {
 
 function Frame24() {
   return (
-    <div className="absolute h-[1080px] left-0 overflow-clip rounded-tl-[20px] rounded-tr-[20px] top-[2994px] w-[1660px]">
+    <div className="absolute h-[1080px] left-0 overflow-clip rounded-tl-[20px] rounded-tr-[20px] top-[2994px] w-[1660px]" data-reveal="static-background">
       <div className="-translate-x-1/2 absolute bg-[#001d5b] h-[1080px] left-1/2 top-0 w-[1659.903px]" />
       <div className="absolute left-[-740.77px] mix-blend-screen size-[1561.554px] top-[-678.91px]">
         <svg className="absolute block inset-0 size-full" fill="none" height="1561.55" preserveAspectRatio="none" viewBox="0 0 1561.55 1561.55" width="1561.55">
@@ -2303,7 +2303,7 @@ function Frame55() {
 
 function Frame26() {
   return (
-    <div className="absolute h-[1421px] left-0 overflow-clip rounded-tl-[20px] rounded-tr-[20px] top-[3994px] w-[1660px]">
+    <div className="absolute h-[1421px] left-0 overflow-clip rounded-tl-[20px] rounded-tr-[20px] top-[3994px] w-[1660px]" data-reveal="static-background">
       <div className="-translate-x-1/2 absolute h-[1486.447px] left-1/2 top-0 w-[1659.844px]">
         <div aria-hidden className="absolute inset-0 pointer-events-none">
           <div className="absolute inset-0" style={{ backgroundImage: "linear-gradient(163.77737214462292deg, rgb(21, 103, 196) 61.834%, rgb(255, 255, 255) 45.131%)" }} />
